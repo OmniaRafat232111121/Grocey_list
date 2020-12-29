@@ -17,6 +17,19 @@ li p {
     font-family: serif;
     margin: 0.3em;
     color: #000;
+    float: left;
+}
+svg{
+    float: right;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+svg:hover{
+    color: crimson;
+    cursor: pointer;
+}
+.bi-pencil:hover{
+    color: black;
 }
 label{
     font-family: serif;
