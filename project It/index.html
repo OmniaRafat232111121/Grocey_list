@@ -10,26 +10,57 @@
     <title>grocery list</title>
 </head>
 
-<body>
-    <div class="first">
-        <h1>Add Grocery Item</h1>
-        <form action="">
-            <input type="text" class="add">
-            <button type="submit" class="add submit">submit Here</button>
-            </foprm>
+<body class="vertical-center">
+    <div class="container text-center big">
+        <div class="first container my-5 py-3">
+            <form action="">
+                <div class="form-group">
+                    <label for="add" class="mb-3">Add Grocery Item</label>
+                    <input type="text" id="add" class="mb-3 add form-control">
+                    <button class="add submit form-control btn btn-outline-light px-5">Submit Here</button>
+                </div>
+            </form>
+        </div>
+        <div class="second container my-5 py-3">
+            <form action="">
+                <div class="form-group">
+                    <label for="add" class="">Grocery Items</label>
+                    <ul class="list-group">
+                        <li class="list-group-item rounded">
+                            <p>Milk</p>
+                            <a href="#" class="add-item">
+                                <i class="far fa-trash-alt"></i>
+                            </a>
+                        </li>
+                        <li class="list-group-item rounded">
+                            <p>Bread</p>
+                            <a href="#" class="add-item">
+                                <i class="far fa-trash-alt"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="#" class="add-item">
+                        <i class="far fa-trash-alt"></i>
+                    </a>
+                    <button class="add submit btn form-control btn-outline-primary px-5">Clear Items</button>
+                </div>
+            </form>
+        </div>
+        <div class="row mt-5 pt-5 align-text-bottom">
+            <div class="col">
+                <h4>Made by:</h4>
+            </div>
+            <div class="col">
+                <ul>
+                    <li>Ishraq Ahmed Jamaluddin</li>
+                    <li>Omnia Raafat Moustafa</li>
+                    <li>Menna Ramadan Ali</li>
+                    <li>Mazen Mohamed Shebeta</li>
+                    
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="second">
-
-        <h1>Grocery items</h1>
-        <a href="#" class="add-item">
-            <i class="far fa-trash-alt"></i>
-        </a>
-    </div>
-    <button type="submit" class="add submit">Clear Items</button>
-    </div>
-
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>
