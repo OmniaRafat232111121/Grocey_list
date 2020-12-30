@@ -19,6 +19,11 @@ li p {
     color: #000;
     float: left;
 }
+li input {
+    display: none !important;
+    float: left;
+    width: 65% !important;
+}
 svg{
     float: right;
     margin-top: 10px;
