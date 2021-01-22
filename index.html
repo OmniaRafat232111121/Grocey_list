@@ -25,7 +25,7 @@
             <form action="" onsubmit="return false">
                 <div class="form-group">
                     <label for="add" class="">Grocery Items</label>
-                    <ul class="list-group">
+                    <ul class="list-group" id="item-list">
                         <li class="list-group-item rounded">
                             <p>Milk</p>
                             <input type="text" name="show" class="py-1 form-control">
@@ -59,7 +59,8 @@
                             </svg>
                         </li>
                     </ul>
-                    <button class="add submit btn form-control btn-outline-primary px-5">Clear Items</button>
+                    <button class="add submit btn form-control btn-outline-primary px-5" onclick="delete_all()">Clear
+                        Items</button>
                 </div>
             </form>
         </div>
@@ -97,16 +98,22 @@
                 }
             });
             input.addEventListener('focusout', (event) => {
-                    p.innerText = input.value;
-                    p.style.display = "inline";
-                    input.style.cssText = 'display:none !important';
+                p.innerText = input.value;
+                p.style.display = "inline";
+                input.style.cssText = 'display:none !important';
             });
         }
-        function delete_item(child){
-            let X=child.parentNode;
+        function delete_item(child) {
+            let X = child.parentNode;
             X.remove();
-        
+
+        }
+        function delete_all() {
+            var myList = document.getElementById('item-list');
+            myList.innerHTML = '';
+
         }
     </script>
 </body>
+
 </html>
