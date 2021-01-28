@@ -53,6 +53,11 @@
     <script src="js/bootstrap.min.js"></script>
     <script>
         $(window).keydown(function(event) { if(event.keyCode == 13) { event.preventDefault(); return false; } });
+        document.getElementById('add').addEventListener("keydown", function (event) {
+            if(event.keyCode == 13) {
+                createItem();
+            }
+        });
         function edit(child) {
             let li = child.parentNode;
             let p = li.firstElementChild;
