@@ -77,3 +77,6 @@ li:hover{
 .col h4{
     text-align: right;
 }
+.text-success {
+    display: none;
+}

@@ -15,6 +15,7 @@
         <div class="first container my-5 py-3">
             <form action="" onsubmit="return false">
                 <div class="form-group">
+                    <div class="border-2 my-1 py-1 text-success border border-success rounded"><strong>Item Added To The List</strong></div>
                     <label for="add" class="mb-3">Add Grocery Item</label>
                     <input type="text" id="add" class="mb-3 add form-control">
                     <button class="add submit form-control btn btn-outline-light px-5" onclick="createItem()">Submit
@@ -83,6 +84,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
+        $(window).keydown(function(event) { if(event.keyCode == 13) { event.preventDefault(); return false; } });
         function edit(child) {
             let li = child.parentNode;
             let p = li.firstElementChild;
@@ -116,9 +118,10 @@
         }
         function createItem() {
             let value = document.getElementById('add').value;
-            let parent = document.getElementById('item-list');
-            let old = parent.innerHTML;
-            parent.innerHTML = `${old}
+            if (value) {
+                let parent = document.getElementById('item-list');
+                let old = parent.innerHTML;
+                parent.innerHTML = `${old}
                         <li class="list-group-item rounded">
                             <p>${value}</p>
                             <input type="text" name="show" class="py-1 form-control">
@@ -135,7 +138,15 @@
                                     d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5L13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175l-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
                             </svg>
                         </li>`;
-            document.getElementById('add').value = '';
+                document.getElementById('add').value = '';
+                let msg = document.getElementsByClassName('text-success')[0];
+                msg.firstChild.innerText = `${value} Added To The List`;
+
+                $(".text-success").fadeIn();
+                setTimeout(function () {
+                    $(".text-success").fadeOut();
+                }, 3000);
+            }
         }
     </script>
 </body>
